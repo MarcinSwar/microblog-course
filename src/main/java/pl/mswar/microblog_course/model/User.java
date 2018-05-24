@@ -1,15 +1,35 @@
 package pl.mswar.microblog_course.model;
 
+import java.io.File;
+import java.util.Date;
 import java.util.Objects;
 
 public class User {
     private String login;
     private String password;
+    private String uniqueAccountname;
+    private String userAccountDescription;
+    private Date accountCreationDate;//TODO: change this class for java 8specific
+    AccountStatus accountStatus;
+    AccountType accountType;
+    File userAvatar;
 
-    public User(String login, String password) {
+
+    public User(String login, String password, String uniqueAccountname, String userAccountDescription, Date accountCreationDate, AccountStatus accountStatus, AccountType accountType, File userAvatar) {
         this.login = login;
         this.password = password;
+        this.uniqueAccountname = uniqueAccountname;
+        this.userAccountDescription = userAccountDescription;
+        this.accountCreationDate = accountCreationDate;
+        this.accountStatus = accountStatus;
+        this.accountType = accountType;
+        this.userAvatar = userAvatar;
     }
+
+    public User() {
+    }
+
+
 
     public String getLogin() {
         return login;
